@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>PhysioPro - Clinical Excellence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#c6e7ff",
+                        "on-primary-fixed": "#001e2d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dde9ff",
+                        "outline-variant": "#bfc7cf",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#075685",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-dim": "#ccdbf4",
+                        "primary": "#01658c",
+                        "secondary-fixed-dim": "#b4c8e2",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#001d32",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-container": "#94cbff",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-surface": "#0d1c2f",
+                        "on-primary-container": "#00587b",
+                        "secondary-fixed": "#d0e4ff",
+                        "primary-fixed-dim": "#88cffb",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-surface-variant": "#40484e",
+                        "surface-variant": "#d5e3fd",
+                        "on-error": "#ffffff",
+                        "primary-container": "#87cefa",
+                        "on-secondary-fixed-variant": "#35485e",
+                        "secondary": "#4d6077",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#233144",
+                        "on-secondary-container": "#51647b",
+                        "background": "#f8f9ff",
+                        "surface-tint": "#01658c",
+                        "surface-container": "#e6eeff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#d5e3fd",
+                        "tertiary": "#206393",
+                        "on-primary-fixed-variant": "#004c6b",
+                        "on-secondary-fixed": "#071d30",
+                        "on-background": "#0d1c2f",
+                        "surface": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-container": "#cde1fc",
+                        "inverse-primary": "#88cffb",
+                        "outline": "#70787f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": [
+                            "Inter"
+                        ],
+                        "headline-lg": [
+                            "Inter"
+                        ],
+                        "label-sm": [
+                            "Inter"
+                        ],
+                        "title-md": [
+                            "Inter"
+                        ],
+                        "body-lg": [
+                            "Inter"
+                        ],
+                        "headline-lg-mobile": [
+                            "Inter"
+                        ],
+                        "body-md": [
+                            "Inter"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "label-sm": [
+                            "13px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "title-md": [
+                            "20px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md min-h-screen">
+    <!-- TopAppBar -->
+    <header
+        class="w-full top-0 sticky z-50 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] bg-surface-container-lowest/80 backdrop-blur-md">
+        <div class="flex justify-between items-center px-gutter py-sm max-w-container-max mx-auto">
+            <div class="flex items-center gap-3 active:scale-95 transition-transform cursor-pointer">
+                <span class="material-symbols-outlined text-primary text-[32px]" data-icon="medical_services"
+                    data-weight="fill">medical_services</span>
+                <span class="font-headline-lg text-headline-lg text-primary tracking-tight">PhysioPro</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-2 ml-auto mr-6">
+                <a class="px-4 py-2 rounded-full bg-[#87CEFA] text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold transition-colors duration-200"
+                    href="Index.html">Home</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="About.html">About</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="Departments.html">Departments</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="Doctors.html">Doctors</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="Services.html">Services</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="Facilities.html">Facilities</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="Gallery.html">Gallery</a>
+                <a class="px-4 py-2 rounded-full text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-primary transition-colors duration-200"
+                    href="Contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center">
+                <span class="material-symbols-outlined text-[#DC2626] text-[24px] cursor-pointer"
+                    data-weight="fill">phone_in_talk</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-surface-container-low overflow-hidden pt-xl pb-lg" id="home">
+            <div
+                class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-lg items-center relative z-10">
+                <div class="flex flex-col gap-md max-w-2xl">
+                    <h1 class="font-display-lg text-display-lg text-on-background">Restore Your Mobility, <span
+                            class="text-primary">Reclaim Your Life</span></h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">Comprehensive, evidence-based
+                        physiotherapy, robotic rehabilitation, and personalized orthopedic care.</p>
+                    <div class="flex flex-wrap items-center gap-4 mt-2">
+                        <button
+                            class="bg-[#87CEFA] hover:bg-[#87CEFA]/90 text-on-primary-container font-label-sm text-label-sm font-semibold py-3 px-6 rounded-xl transition-all duration-200 active:scale-95 flex items-center gap-2 shadow-sm">
+                            Book Consultation
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </button>
+                        <button
+                            class="border border-outline hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold py-3 px-6 rounded-xl transition-all duration-200 active:scale-95">
+                            Explore Treatments
+                        </button>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 mt-4 p-3 bg-white rounded-xl shadow-sm w-max border border-secondary-container/30">
+                        <div class="flex text-[#FFB400]">
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star_half</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">4.9/5 Rating from 2,500+
+                            Patients</span>
+                    </div>
+                </div>
+                <div
+                    class="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-secondary-container/20">
+                    <img alt="Physiotherapy session" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBActcl96tw_W49HQ3EQZ5qrG09Sn2NA_7WByfd4OQaEDUgEHmHMBVjl9w36fl0Ry8tPTvN-fxZW0WajhBAHi_41d_n0zxmxR2yjaWIlAY5nRimn3-IEpHui7vUTXgjjqRhNKIIu4_7j5Hmt0zBtJr1GwEH7hqHPx_ePLkC7xRhwY654OY9NAHyYnfj3OAPENrGyG6m30_joIYRVjONxR9kypVqc0Q43hEtQYlZbQOE8a_H7QeujOX73g">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+            </div>
+            <div
+                class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[80px] -z-10">
+            </div>
+            <div
+                class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[60px] -z-10">
+            </div>
+        </section>
+        <!-- Stats Counter Bar -->
+        <section class="max-w-container-max mx-auto px-gutter -mt-8 relative z-20 mb-xl">
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 rounded-2xl shadow-[0px_8px_30px_rgba(0,0,0,0.04)] border border-secondary-container/20">
+                <div class="flex flex-col items-center text-center p-4">
+                    <span class="font-headline-lg text-headline-lg text-[#87CEFA] mb-1">15+</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Expert
+                        Specialists</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 md:border-l border-outline-variant/30">
+                    <span class="font-headline-lg text-headline-lg text-[#87CEFA] mb-1">10k+</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Recovered
+                        Patients</span>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-4 border-t md:border-t-0 md:border-l border-outline-variant/30">
+                    <span class="font-headline-lg text-headline-lg text-[#87CEFA] mb-1">25+</span>
+                    <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Specialized
+                        Units</span>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-4 border-t md:border-t-0 md:border-l border-outline-variant/30">
+                    <span class="font-headline-lg text-headline-lg text-[#87CEFA] mb-1">99%</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Patient
+                        Satisfaction</span>
+                </div>
+            </div>
+        </section>
+        <!-- About Hospital -->
+        <section class="max-w-container-max mx-auto px-gutter py-xl" id="about">
+            <div class="mb-md text-center max-w-3xl mx-auto">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Leading Excellence in Modern
+                    Physiotherapy &amp; Rehab</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">We bring together world-class specialists
+                    and cutting-edge technology to create tailored rehabilitation journeys.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-8">
+                <div class="bg-[#B0C4DE]/30 p-8 rounded-3xl border border-secondary-container/30">
+                    <h3 class="font-title-md text-title-md text-on-background mb-4">Our Mission</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">To deliver personalized, evidence-based
+                        rehabilitation that restores mobility, relieves pain, and enhances the overall quality of life
+                        for every patient we serve.</p>
+                </div>
+                <div class="bg-[#B0C4DE]/30 p-8 rounded-3xl border border-secondary-container/30">
+                    <h3 class="font-title-md text-title-md text-on-background mb-4">Our Vision</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">To be the global benchmark in
+                        innovative physical therapy and robotic rehabilitation, continually setting new standards in
+                        clinical outcomes and patient care.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span
+                    class="px-6 py-3 bg-white rounded-full shadow-sm border border-[#87CEFA] text-sm font-semibold text-[#87CEFA] flex items-center gap-2"><span
+                        class="material-symbols-outlined text-[18px]">verified</span> NABH Accredited</span>
+                <span
+                    class="px-6 py-3 bg-white rounded-full shadow-sm border border-[#87CEFA] text-sm font-semibold text-[#87CEFA] flex items-center gap-2"><span
+                        class="material-symbols-outlined text-[18px]">verified</span> CARF Certified</span>
+                <span
+                    class="px-6 py-3 bg-white rounded-full shadow-sm border border-[#87CEFA] text-sm font-semibold text-[#87CEFA] flex items-center gap-2"><span
+                        class="material-symbols-outlined text-[18px]">verified</span> ISO 9001:2015</span>
+            </div>
+        </section>
+        <!-- Featured Departments -->
+        <section class="max-w-container-max mx-auto px-gutter py-lg" id="departments">
+            <div class="mb-md text-center max-w-2xl mx-auto">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Specialized Care Departments</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">We offer targeted treatments across
+                    specialized domains to ensure optimal recovery.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-sm border border-secondary-container/30 hover:shadow-md transition-shadow group flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-container/30 flex items-center justify-center group-hover:bg-[#87CEFA] group-hover:text-white transition-colors text-[#87CEFA]">
+                            <span class="material-symbols-outlined">accessibility_new</span>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 45-60 min</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-on-background mb-2">Joint &amp; Spinal Rehabilitation
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Comprehensive care for
+                        joint pain, spine disorders, and post-surgical recovery.</p>
+                    <ul class="flex flex-col gap-2 mb-6">
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span> Joint
+                            Replacement Rehab</li>
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span> Spine
+                            &amp; Posture Correction</li>
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span>
+                            Arthritis Management</li>
+                    </ul>
+                    <a class="font-label-sm text-label-sm text-[#87CEFA] font-semibold flex items-center gap-1 hover:gap-2 transition-all mt-auto"
+                        href="#">Explore All Departments <span
+                            class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-sm border border-secondary-container/30 hover:shadow-md transition-shadow group flex flex-col h-full relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-container/30 flex items-center justify-center group-hover:bg-[#87CEFA] group-hover:text-white transition-colors text-[#87CEFA]">
+                            <span class="material-symbols-outlined">sports_martial_arts</span>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 60-90 min</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-on-background mb-2">Athletic Injury Recovery</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Targeted programs to
+                        restore athletic performance and prevent future injuries.</p>
+                    <ul class="flex flex-col gap-2 mb-6">
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span>
+                            Ligament Tears (ACL/MCL)</li>
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span> Muscle
+                            Strains &amp; Sprains</li>
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span>
+                            Return-to-Sport Testing</li>
+                    </ul>
+                    <a class="font-label-sm text-label-sm text-[#87CEFA] font-semibold flex items-center gap-1 hover:gap-2 transition-all mt-auto"
+                        href="#">Explore All Departments <span
+                            class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-sm border border-secondary-container/30 hover:shadow-md transition-shadow group flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-container/30 flex items-center justify-center group-hover:bg-[#87CEFA] group-hover:text-white transition-colors text-[#87CEFA]">
+                            <span class="material-symbols-outlined">neurology</span>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 45-60 min</span>
+                    </div>
+                    <h3 class="font-title-md text-title-md text-on-background mb-2">Neurological Restoration</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Specialized therapies to
+                        improve motor function after neurological events.</p>
+                    <ul class="flex flex-col gap-2 mb-6">
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span> Stroke
+                            Rehabilitation</li>
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span>
+                            Parkinson's Care</li>
+                        <li class="flex items-start gap-2 font-label-sm text-label-sm text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[#87CEFA] text-[16px]">check_circle</span> Spinal
+                            Cord Injuries</li>
+                    </ul>
+                    <a class="font-label-sm text-label-sm text-[#87CEFA] font-semibold flex items-center gap-1 hover:gap-2 transition-all mt-auto"
+                        href="#">Explore All Departments <span
+                            class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- Doctors -->
+        <section
+            class="max-w-container-max mx-auto px-gutter py-lg bg-surface-container-low rounded-3xl my-lg border border-secondary-container/20"
+            id="doctors">
+            <div class="flex justify-between items-end mb-md">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Meet Our Lead Specialists
+                    </h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">World-class physiotherapists
+                        dedicated to your recovery journey.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-secondary-container/30 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Dr. Sarah Jenkins"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYW4R50XqEXh7G0rAeQVOpYuq293N4y7pk1LdQtj2dwtekIdf6lkre56UF5IvWep-S2bu0WIVRrU1V_0AIDubC6RoUWYgkUa8hSbZPtNp3hMLzRuX2KXuqsvwrDbVi32QY_ERHKredOHEqZ-K-4DriFC_Md5w2XXUC_j2j7HgQKoyuWS4Scu7XI0TVGTKdnW3SnpUdbfD_PRmzUFJg7fXWDrVYn2BMpyNOz9DiDUy6mbyTJNUria9WbA">
+                        <div
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur text-on-background text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[#FFB400] text-[14px]"
+                                data-weight="fill">star</span> 4.9
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur text-primary text-xs font-bold px-2 py-1 rounded-md">
+                            15 Yrs Exp</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-title-md text-title-md text-on-background">Dr. Sarah Jenkins <span
+                                class="text-primary text-sm font-normal">DPT</span></h3>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant mb-3">Chief Orthopedic
+                            Physiotherapist</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span
+                                class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded-md">Spine
+                                Rehab</span>
+                            <span
+                                class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded-md">Joint
+                                Replacement</span>
+                        </div>
+                        <button
+                            class="w-full border border-[#87CEFA] text-[#87CEFA] hover:bg-[#87CEFA] hover:text-on-primary-container font-label-sm text-label-sm font-semibold py-2 rounded-xl transition-colors">Book
+                            Slot</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-secondary-container/30 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Dr. Michael Chang"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqY1g76qDe_yAF_VfzMiWG64GCrtnyS2u5DcbAcG5O1CdmBcPtGZCQhZ0--nQGxvWuDVM4pzpZXHRgMBD9EtfR1jKGefW9asBABUL8rN37sTBvJNMTWHsDvrAQG-diaIvBnglUltvIf0RPJI6LmBPxo7UBo3DjO4Rh7qKSqxcXupahzynmBJq8wSS0oUPR5SQ2ytrcbK3hA6F1eTz2_sOzh6Ly7QBWyuaLRzRIeRWrMfWS-frzwrNC2g">
+                        <div
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur text-on-background text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[#FFB400] text-[14px]"
+                                data-weight="fill">star</span> 4.8
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur text-primary text-xs font-bold px-2 py-1 rounded-md">
+                            12 Yrs Exp</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-title-md text-title-md text-on-background">Dr. Michael Chang <span
+                                class="text-primary text-sm font-normal">MD</span></h3>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant mb-3">Head of Sports
+                            Rehabilitation</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span
+                                class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded-md">Sports
+                                Injuries</span>
+                            <span
+                                class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded-md">Biomechanics</span>
+                        </div>
+                        <button
+                            class="w-full border border-[#87CEFA] text-[#87CEFA] hover:bg-[#87CEFA] hover:text-on-primary-container font-label-sm text-label-sm font-semibold py-2 rounded-xl transition-colors">Book
+                            Slot</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-secondary-container/30 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img alt="Dr. Elena Rodriguez"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv--MYlgWidmbn3a86i69SkeSSwRfN72D9Z_EYhOPPSeZg1Cm1S731lPk6OwS_Tnuwe4x4wLfmA1LjgEkZWvo2wZMMv7Aqg4kGt1yXc8Bgbwk1mznXXQuuUcKnI3896QW2Bo1sz4A7hmMR3o2P4nFBS4qMRmenB7MIFXxiWBGkxRXu5ypCbLmz533dcBIR58vn3ienNioo5wrvFByeDRVLryigoMnOZtfxyOE93RBUOPKgwFabeO7-sQ">
+                        <div
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur text-on-background text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[#FFB400] text-[14px]"
+                                data-weight="fill">star</span> 5.0
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-white/90 backdrop-blur text-primary text-xs font-bold px-2 py-1 rounded-md">
+                            18 Yrs Exp</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-title-md text-title-md text-on-background">Dr. Elena Rodriguez <span
+                                class="text-primary text-sm font-normal">DPT</span></h3>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant mb-3">Lead Neurological Specialist
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span
+                                class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded-md">Neuro-Rehab</span>
+                            <span
+                                class="bg-surface-container text-on-surface-variant text-xs px-2 py-1 rounded-md">Stroke
+                                Recovery</span>
+                        </div>
+                        <button
+                            class="w-full border border-[#87CEFA] text-[#87CEFA] hover:bg-[#87CEFA] hover:text-on-primary-container font-label-sm text-label-sm font-semibold py-2 rounded-xl transition-colors">Book
+                            Slot</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Treatments & Services -->
+        <section class="max-w-container-max mx-auto px-gutter py-xl" id="services">
+            <div class="flex justify-between items-end mb-md">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Treatments &amp; Clinical
+                        Services</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Comprehensive programs designed for
+                        efficient recovery.</p>
+                </div>
+                <a class="hidden md:flex font-label-sm text-label-sm text-[#87CEFA] font-semibold items-center gap-1 hover:gap-2 transition-all"
+                    href="#">View All Services <span
+                        class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-secondary-container/30 hover:border-primary transition-colors cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="material-symbols-outlined text-[#87CEFA] text-3xl">directions_walk</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 45-60 min</span>
+                    </div>
+                    <h3 class="font-title-md mb-2 text-[16px]">Post-Op Mobility Recovery</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant mt-auto">Accelerated healing and restored
+                        range of motion after surgery.</p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-secondary-container/30 hover:border-primary transition-colors cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="material-symbols-outlined text-[#87CEFA] text-3xl">airline_seat_flat</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 45-60 min</span>
+                    </div>
+                    <h3 class="font-title-md mb-2 text-[16px]">Spine Rehabilitation</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant mt-auto">Targeted therapies to relieve back
+                        pain and improve spinal health.</p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-secondary-container/30 hover:border-primary transition-colors cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="material-symbols-outlined text-[#87CEFA] text-3xl">assist_walker</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 45-60 min</span>
+                    </div>
+                    <h3 class="font-title-md mb-2 text-[16px]">Gait Training &amp; Balance</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant mt-auto">Relearning safe and effective
+                        walking patterns to prevent falls.</p>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-secondary-container/30 hover:border-primary transition-colors cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="material-symbols-outlined text-[#87CEFA] text-3xl">precision_manufacturing</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-surface-container text-xs rounded-md text-on-surface-variant"><span
+                                class="material-symbols-outlined text-[14px] mr-1">schedule</span> 60-90 min</span>
+                    </div>
+                    <h3 class="font-title-md mb-2 text-[16px]">Robotic Exoskeleton Therapy</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant mt-auto">Advanced technology for intensive
+                        gait training and neuro-recovery.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Facilities -->
+        <section class="max-w-container-max mx-auto px-gutter py-lg" id="facilities">
+            <div class="mb-md">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Facilities &amp; Infrastructure
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-4">Equipped with the latest
+                    technology to ensure your recovery is fast, safe, and effective.</p>
+                <div class="flex gap-3">
+                    <span
+                        class="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-md border border-green-200">HEPA
+                        Filtration</span>
+                    <span
+                        class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-md border border-blue-200">100%
+                        Accessible</span>
+                    <span
+                        class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-md border border-purple-200">Infection
+                        Control</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="relative h-48 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img alt="Robotic Gait Lab"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuABQ0kCd47ucq44FZBW3w3MMC4DqMxr72cvqqh3mCZErRoKPlA7wmspVzQHOBeaZqROniQnk1PEguMMXUB0TQkFDxhFschwlBNbO12Er8SwIk6s_Q6u2tCCi6hxVJTPEj9Se9zkc8lEyUWEKAhu4B2tfhSdurH5AmiUevbhEnTKfy4rFjr28eziUC3oT18DBl71pqMnJoePvjUu7-BzvKOChN4WKPm08CBNvi9pQUNBfC40b2ujgzXY4g">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                        <h3 class="font-title-md text-white text-[16px]">Robotic Gait Lab</h3>
+                    </div>
+                </div>
+                <div class="relative h-48 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img alt="Advanced Hydrotherapy Pool"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj22rShO9fUmBZdvv04BL5hRlxfhD45BwfExIpceOEflwMihrOPIMtbx-9axaT1HmqpK1HqeTf7EcEa1LKJAU4xPgCsi6W8rt6eHw8TQrzp5nnf9ddVsMEH9gRVocFEoa1Ybf-sHjgS85lCMG4pwVHsoBDO0PB4AzmANCOo3Mdn4pFT59_swXOmuzdLX0nfUsoEEIsWCn7e8oqI_0ZIaVnL_BTCgZvbmiUrycFXtxnSufhnV5haJeR_A">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                        <h3 class="font-title-md text-white text-[16px]">Advanced Hydrotherapy Pool</h3>
+                    </div>
+                </div>
+                <div class="relative h-48 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img alt="Private Recovery Suites"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2dB6kN4hhjQPMJoMBKZ2K4U2FgCFcZwlYBYz6j489ymfNsd2ctNRPuTKk22x23PixOQKIpHtm6FVkacu48qgx2kaCSJsLJIoqafGf7tIx26vL_Pep6OPozAFvIoJZamxju3m-6nET7NoVE_nlU7Ldz0xKk5SsqL7t_UkSsnFUbXbDcbY_3XCJlPvsnhTD2L6HmBr44Cbh3oHvmvXXEpUjjWBuk87sjPLWwUdyi7fRfKW_uv3U3pSI5g">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                        <h3 class="font-title-md text-white text-[16px]">Private Recovery Suites</h3>
+                    </div>
+                </div>
+                <div class="relative h-48 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img alt="Digital Diagnostics &amp; EMG Lab"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-9AFiznKwhgJjG_qN2A7CZcXGUd2MB13G6IFsjqwWfz89BEgjjuQyUQ_UlabR2ikLSBPVQdZBu7H-Qm67Zhrh8R_vxvgAUDHl_vsNyCmWaJGbxt34bGIzMehFLYB48o0yVXR1VwkWnm8koSm_D6A618p3i7P8dbeGAYbgvlGZOKx41BM0qVwUdGqBgxi7CMxr-iod6wDlWjLr4kvg-wOhFQVqE91GzFeQz_92PN3zXZIx8y_pzV_kYQ">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-4">
+                        <h3 class="font-title-md text-white text-[16px]">Digital Diagnostics &amp; EMG Lab</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Media Gallery -->
+        <section
+            class="max-w-container-max mx-auto px-gutter py-xl bg-surface-container-low rounded-3xl my-lg border border-secondary-container/20"
+            id="gallery">
+            <div class="mb-md text-center">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Media Gallery Preview</h2>
+                <div class="flex justify-center gap-2 mb-6">
+                    <span
+                        class="px-4 py-1 bg-[#87CEFA] text-on-primary-container rounded-full text-sm font-semibold">Clinical
+                        Units</span>
+                    <span
+                        class="px-4 py-1 bg-white text-on-surface-variant border border-secondary-container rounded-full text-sm font-medium">Patient
+                        Sessions</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="h-40 bg-surface-container rounded-xl overflow-hidden"><img alt="Hospital Entrance"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMuG4ZBRyTVFcse8HcTN049kojpwnbpRoZdCS5UCL_V9ATEVHqNIYp5QAqL2K3s3GUsR-Gajr7-ZsBtf0n8jxUqk6BDA7vNG4pZXFOZiPJbn6uCTaNr6Zna1gpXkKJSWKdoxRKeupz9skyu-zPryOfSR2TSfMP78kcEwchCfazfKOxqFZ4RIRdaEz-mqZw1BZhtpQqklPtHihgYdoeM4i-b5BX7a0wr3cgFbQlz62U-cI6Roay4mrqKA">
+                </div>
+                <div class="h-40 bg-surface-container rounded-xl overflow-hidden"><img alt="Robotic Floor"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEhSQrhFMMnFPrQnAljMTEu2TJv9BjY6mjD-UG8Qr9gAZ1IkH43PFQhi-g_cydpnzY_RYKzxjpbgIP6sOPuY3RgW6WYRdITNKmVeg-VYeloXrmOxESU9fR14AQmgao1pszhlWRyYJBybmc7MLT6ZnHj9Q-N5yObk7w9MhzkiCLRuiLk2S_Tk8GlRKVKdBrBF261-vhoSbKmain1IW1Cl1QDPQfkzAOBzLIQNiY3VsxtM1E3pz6k21ZiA">
+                </div>
+                <div class="h-40 bg-surface-container rounded-xl overflow-hidden"><img alt="Hydrotherapy Pool"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNrK_yIwTcdnEUKEFITSYS75Qz1vgCx4wku99wJyTUWqvSGNwdowEc9CcRX2q3rFsGq7i3FlVAoZXBlCtyWTarC7JVGKBxLrflxQOkEraqklttOe7v--Wvdht0vtV0Jahod007laUgJ1hCKA1i1IjmHaJha51677zCiRftnBz3nxSOPdlB1Otvr2806sf0BtRRgjzwsEwLlZmQQvGgZgMOjS58P0O_KgACtxgJ-XLoCafRzm69m7I0RA">
+                </div>
+                <div class="h-40 bg-surface-container rounded-xl overflow-hidden"><img alt="Private Suites"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjH8r56IL7qa-SNcJpG0jJQ5N68cjS4h1ani15ee20ohcZa2LV0O-gtIfkdY_o-gEVtGXzYdYl94O-I8-bo8H6CDt5MExfX-klwXiT652JqFnfh2VazFtsb1HsoPlMEfKX4QUSFhDWGtVDtdKr37ovbhVNXW5o7wtd-30ZclF36Yu2ENSQESpmFP4fZR7jYzDqfoB0_zJSuozfnmKYSN5tq00ZewtcUAycMMQ_zdlsB1vHQOid_EoPwg">
+                </div>
+            </div>
+        </section>
+        <!-- Patient Stories -->
+        <section class="max-w-container-max mx-auto px-gutter py-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-lg items-center">
+                <div class="lg:col-span-1">
+                    <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Stories of Recovery</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6">Don't just take our word for it.
+                        Hear from patients who have reclaimed their lives through our personalized care programs.</p>
+                    <button
+                        class="border border-outline hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold py-2 px-5 rounded-xl transition-colors">Read
+                        All Reviews</button>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-secondary-container/30 relative">
+                        <span class="material-symbols-outlined text-primary/10 text-6xl absolute top-4 right-4"
+                            data-weight="fill">format_quote</span>
+                        <div class="flex text-[#FFB400] mb-3 relative z-10">
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic relative z-10">"After my
+                            ACL tear, I thought my running days were over. The team at PhysioPro not only helped me
+                            recover but improved my overall biomechanics. I'm back to running marathons!"</p>
+                        <div class="flex items-center gap-3 relative z-10">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm">
+                                JD</div>
+                            <div>
+                                <div class="font-title-md text-[14px] leading-tight text-on-background">James Donovan
+                                </div>
+                                <div class="font-label-sm text-[11px] text-[#87CEFA] mt-1">Sports Injury Recovery</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-secondary-container/30 relative">
+                        <span class="material-symbols-outlined text-primary/10 text-6xl absolute top-4 right-4"
+                            data-weight="fill">format_quote</span>
+                        <div class="flex text-[#FFB400] mb-3 relative z-10">
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                            <span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic relative z-10">"The
+                            robotic gait lab is incredible. My mother's stroke recovery was accelerated significantly
+                            thanks to the advanced technology and the incredibly patient staff here."</p>
+                        <div class="flex items-center gap-3 relative z-10">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#87CEFA] text-white flex items-center justify-center font-bold text-sm">
+                                MW</div>
+                            <div>
+                                <div class="font-title-md text-[14px] leading-tight text-on-background">Maria Walsh
+                                </div>
+                                <div class="font-label-sm text-[11px] text-[#87CEFA] mt-1">Neuro-Rehab Patient Family
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact & Enquiry -->
+        <section
+            class="max-w-container-max mx-auto px-gutter py-xl bg-white rounded-3xl my-lg border border-secondary-container/30 shadow-sm"
+            id="contact">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg items-center">
+                <div class="p-4">
+                    <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Contact &amp; Enquiry</h2>
+                    <p class="font-body-md text-on-surface-variant mb-6">We're here to help you start your recovery
+                        journey. Reach out to us for appointments or any questions.</p>
+                    <div class="flex flex-col gap-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#87CEFA] flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined">support_agent</span>
+                            </div>
+                            <div>
+                                <h4 class="font-title-md text-on-background text-base">24/7 Triage &amp; Support</h4>
+                                <p class="font-body-md text-[#87CEFA] font-semibold">1-800-PHYSIO</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#87CEFA] flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined">schedule</span>
+                            </div>
+                            <div>
+                                <h4 class="font-title-md text-on-background text-base">OPD Timings</h4>
+                                <p class="font-body-md text-on-surface-variant">Mon - Sat: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-48 bg-surface-container rounded-xl mb-4 overflow-hidden relative">
+                        <img alt="Map" class="w-full h-full object-cover opacity-60"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAygaCn6tu4KxpJmvbFHgWix6wuclR6o1FoPe2P5LQA-ImKMRdVdXaN1qmTPZI2fggyBV5nOx5YZa1Nu90-05IKdk2CKquEYfvov1V42NqTwSBGgSQej9sXJ0PnJnVh4y-fQSQaGmApAHEBm0uQjYC3cYLJLyf4rl3R8KrL4AnL-Bu6ckiWU8U2Iv-VJhUXQVJeqnxQOCb1UTQp0zkvBH_gr0PTXArLXmvOmvSiYOaf88Rc6rJ9NL9iuw">
+                        <div class="absolute inset-0 flex items-center justify-center"><span
+                                class="material-symbols-outlined text-4xl text-[#87CEFA] drop-shadow-md"
+                                data-weight="fill">location_on</span></div>
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-semibold border border-green-200">
+                        <span class="material-symbols-outlined text-[14px]">lock</span> Secured by Brevo
+                    </div>
+                </div>
+                <div class="bg-surface-container-low p-8 rounded-2xl border border-secondary-container/50">
+                    <h3 class="font-title-md text-xl mb-6 text-on-background">Send us a message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input
+                                class="w-full p-3 rounded-xl border border-secondary-container/50 focus:ring-2 focus:ring-[#87CEFA] focus:border-[#87CEFA] outline-none bg-white"
+                                placeholder="First Name" type="text">
+                            <input
+                                class="w-full p-3 rounded-xl border border-secondary-container/50 focus:ring-2 focus:ring-[#87CEFA] focus:border-[#87CEFA] outline-none bg-white"
+                                placeholder="Last Name" type="text">
+                        </div>
+                        <input
+                            class="w-full p-3 rounded-xl border border-secondary-container/50 focus:ring-2 focus:ring-[#87CEFA] focus:border-[#87CEFA] outline-none bg-white"
+                            placeholder="Email Address" type="email">
+                        <input
+                            class="w-full p-3 rounded-xl border border-secondary-container/50 focus:ring-2 focus:ring-[#87CEFA] focus:border-[#87CEFA] outline-none bg-white"
+                            placeholder="Phone Number" type="tel">
+                        <textarea
+                            class="w-full p-3 rounded-xl border border-secondary-container/50 h-32 resize-none focus:ring-2 focus:ring-[#87CEFA] focus:border-[#87CEFA] outline-none bg-white"
+                            placeholder="How can we help you?"></textarea>
+                        <button
+                            class="w-full bg-[#87CEFA] hover:bg-[#87CEFA]/90 text-on-primary-container font-semibold py-3 rounded-xl transition-colors mt-2"
+                            type="button">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full mt-lg bg-[#dde9ff] dark:bg-surface-container-high border-t border-secondary-container/30">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg px-gutter py-xl max-w-container-max mx-auto">
+            <div class="flex flex-col gap-sm">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="material-symbols-outlined text-[#87CEFA] text-[28px]"
+                        data-weight="fill">medical_services</span>
+                    <span class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">PhysioPro</span>
+                </div>
+                <p class="font-body-md text-[14px] text-on-surface-variant mb-4">Leading center for clinical excellence
+                    in physiotherapy, rehabilitation, and orthopedic care.</p>
+                <div class="flex items-center gap-2 mb-2">
+                    <span
+                        class="bg-white px-2 py-1 rounded text-xs font-bold text-[#87CEFA] border border-[#87CEFA]/20">ISO
+                        Certified</span>
+                    <span
+                        class="bg-white px-2 py-1 rounded text-xs font-bold text-[#87CEFA] border border-[#87CEFA]/20">CARF
+                        Accredited</span>
+                </div>
+                <p class="font-label-sm text-[12px] text-on-surface-variant opacity-80 mt-4">© 2024 PhysioPro Clinical
+                    Excellence.<br>All rights reserved.</p>
+            </div>
+            <div class="flex flex-col gap-base">
+                <h4 class="font-title-md text-[16px] text-on-background mb-2">Quick Links</h4>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> About Us</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Our Doctors</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Patient Portal</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Careers</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Privacy Policy</a>
+            </div>
+            <div class="flex flex-col gap-base">
+                <h4 class="font-title-md text-[16px] text-on-background mb-2">Departments</h4>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Orthopedic
+                    Rehab</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Sports
+                    Injuries</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Neurological
+                    Physio</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Pediatric
+                    Therapy</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-[#87CEFA] transition-colors flex items-center gap-2"
+                    href="#"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Geriatric Care</a>
+            </div>
+            <div class="flex flex-col gap-base">
+                <h4 class="font-title-md text-[16px] text-on-background mb-2">Contact &amp; Support</h4>
+                <div class="flex items-start gap-3 mb-2 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[#87CEFA] text-[20px]">location_on</span>
+                    <span class="font-label-sm text-[13px] leading-tight">123 Healthway Drive, Medical District<br>New
+                        York, NY 10001</span>
+                </div>
+                <div class="flex items-center gap-3 mb-2 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[#87CEFA] text-[20px]">mail</span>
+                    <a class="font-label-sm text-[13px] hover:text-[#87CEFA]"
+                        href="mailto:info@physiopro.com">info@physiopro.com</a>
+                </div>
+                <div class="mt-4 bg-white p-4 rounded-xl border border-secondary-container/50">
+                    <div class="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant mb-1">24/7
+                        Helpline</div>
+                    <div class="flex items-center gap-2 text-[#87CEFA]">
+                        <span class="material-symbols-outlined" data-weight="fill">call</span>
+                        <span class="font-title-md text-[18px] font-bold">1-800-PHYSIO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

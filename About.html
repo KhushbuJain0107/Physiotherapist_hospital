@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>PhysioPro - About Us</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#4d6077",
+                        "surface-dim": "#ccdbf4",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e6eeff",
+                        "on-tertiary-container": "#075685",
+                        "surface-tint": "#01658c",
+                        "inverse-surface": "#233144",
+                        "on-secondary-container": "#51647b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#88cffb",
+                        "on-surface-variant": "#40484e",
+                        "on-secondary-fixed-variant": "#35485e",
+                        "secondary-fixed": "#d0e4ff",
+                        "outline": "#70787f",
+                        "secondary-fixed-dim": "#b4c8e2",
+                        "on-primary-container": "#00587b",
+                        "surface-variant": "#d5e3fd",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary": "#206393",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed": "#001e2d",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-error-container": "#93000a",
+                        "primary": "#01658c",
+                        "primary-fixed": "#c6e7ff",
+                        "tertiary-container": "#94cbff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0d1c2f",
+                        "primary-container": "#87cefa",
+                        "primary-fixed-dim": "#88cffb",
+                        "inverse-on-surface": "#ebf1ff",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-primary-fixed-variant": "#004c6b",
+                        "on-surface": "#0d1c2f",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#cde1fc",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dde9ff",
+                        "outline-variant": "#bfc7cf",
+                        "surface-container-highest": "#d5e3fd",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-secondary-fixed": "#071d30",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": [
+                            "Inter"
+                        ],
+                        "headline-lg-mobile": [
+                            "Inter"
+                        ],
+                        "display-lg": [
+                            "Inter"
+                        ],
+                        "headline-lg": [
+                            "Inter"
+                        ],
+                        "label-sm": [
+                            "Inter"
+                        ],
+                        "title-md": [
+                            "Inter"
+                        ],
+                        "body-lg": [
+                            "Inter"
+                        ]
+                    },
+                    "fontSize": {
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "display-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "label-sm": [
+                            "13px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "title-md": [
+                            "20px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar -->
+    <header
+        class="w-full top-0 sticky z-50 bg-surface-container-lowest dark:bg-surface-container-lowest shadow-[0px_4px_20px_rgba(0,0,0,0.05)] shadow-sm">
+        <div class="flex justify-between items-center px-gutter py-sm max-w-container-max mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[32px]">medical_services</span>
+                <span
+                    class="font-headline-lg text-headline-lg text-primary tracking-tight hidden md:block">PhysioPro</span>
+            </div>
+            <nav class="hidden md:flex gap-6 items-center"><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Index.html">Home</a><a
+                    class="bg-primary-container text-[#334155] px-4 py-2 rounded-full font-bold"
+                    href="About.html">About</a><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Departments.html">Departments</a><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Doctors.html">Doctors</a><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Services.html">Services</a><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Facilities.html">Facilities</a><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Gallery.html">Gallery</a><a
+                    class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="Contact.html">Contact</a></nav>
+
+        </div>
+    </header>
+    <main class="max-w-container-max mx-auto px-gutter py-xl">
+        <!-- Hero Section -->
+        <section class="mb-xl text-center md:text-left flex flex-col md:flex-row items-center gap-lg">
+            <div class="flex-1 space-y-md">
+                <span
+                    class="bg-primary-container/30 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm inline-block">Our
+                    Story</span>
+                <h1 class="font-display-lg text-display-lg text-on-background">Leading Excellence in <br
+                        class="hidden md:block"> Modern Physiotherapy &amp; Rehab</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Dedicated to restoring mobility, alleviating pain, and improving the quality of life for our
+                    patients through evidence-based practices and compassionate care.
+                </p>
+            </div>
+            <div class="flex-1 w-full rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+                <img class="w-full h-[400px] object-cover"
+                    data-alt="A modern, brightly lit physiotherapy clinic room. Minimalist design with soft white walls, light wood flooring, and modern rehabilitation equipment. A sense of calm and healing pervades the space. High-end medical corporate aesthetic with subtle blue accents."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ-yS9Gdn44zXs1empRryJFAFZr6n21NcxnQew0jW-8F4lNisHI613to4nEeJPMhmftZukVWnoKnc98tGZvNWv2bh--1mCAuoSmf92bI5xsfY5bdaolP-6SJM54eUy4d5C3eqzfCT4vCNpvjRUfE0G03XS4UeeAL6nVri1zQGiYmOallaR7AvtgFX1tweewCDDxbaSjTsAJSKjVCHurEksaGs1s5tlb5_YGB6kYFQhc4fTiZnMRm3Q5w">
+            </div>
+        </section>
+        <!-- Mission & Vision -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
+            <div
+                class="bg-secondary-container/30 p-lg rounded-xl flex flex-col gap-sm shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5">
+                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-sm">
+                    <span class="material-symbols-outlined text-primary text-[24px]">flag</span>
+                </div>
+                <h2 class="font-headline-lg text-headline-lg text-on-background">Our Mission</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    To deliver exceptional, personalized physiotherapy that empowers individuals to overcome physical
+                    limitations and achieve their optimal functional potential in a supportive, state-of-the-art
+                    environment.
+                </p>
+            </div>
+            <div
+                class="bg-secondary-container/30 p-lg rounded-xl flex flex-col gap-sm shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5">
+                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-sm">
+                    <span class="material-symbols-outlined text-primary text-[24px]">visibility</span>
+                </div>
+                <h2 class="font-headline-lg text-headline-lg text-on-background">Our Vision</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    To be the premier destination for holistic rehabilitation, recognized globally for integrating
+                    advanced clinical research with compassionate, patient-centered care methodologies.
+                </p>
+            </div>
+        </section>
+        <!-- History Timeline -->
+        <section class="mb-xl py-lg">
+            <div class="text-center mb-lg">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">History &amp; Journey</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">The milestones that define our path to
+                    excellence.</p>
+            </div>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline Line -->
+                <div
+                    class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-surface-container-high transform md:-translate-x-1/2 rounded-full">
+                </div>
+                <!-- Step 1 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-lg last:mb-0">
+                    <div
+                        class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 shadow-[0_0_0_4px_rgba(135,206,250,0.3)] z-10">
+                    </div>
+                    <div
+                        class="ml-12 md:ml-0 md:w-1/2 md:px-lg flex flex-col items-start md:group-odd:items-end text-left md:group-odd:text-right w-full">
+                        <div
+                            class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 w-full md:w-5/6 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow">
+                            <span class="text-primary font-bold font-label-sm text-label-sm block mb-1">2010</span>
+                            <h3 class="font-title-md text-title-md text-on-background mb-2">The Founding</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Established with a vision to
+                                redefine rehabilitative care, starting with a single clinic and a dedicated team of
+                                three specialists.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:even:flex-row group mb-lg last:mb-0">
+                    <div
+                        class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 shadow-[0_0_0_4px_rgba(135,206,250,0.3)] z-10">
+                    </div>
+                    <div
+                        class="ml-12 md:ml-0 md:w-1/2 md:px-lg flex flex-col items-start md:group-odd:items-end text-left md:group-odd:text-right w-full">
+                        <div
+                            class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 w-full md:w-5/6 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow">
+                            <span class="text-primary font-bold font-label-sm text-label-sm block mb-1">2015</span>
+                            <h3 class="font-title-md text-title-md text-on-background mb-2">Expansion</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Opened three new specialized
+                                centers focusing on sports injuries and post-operative recovery.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-lg last:mb-0">
+                    <div
+                        class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 shadow-[0_0_0_4px_rgba(135,206,250,0.3)] z-10">
+                    </div>
+                    <div
+                        class="ml-12 md:ml-0 md:w-1/2 md:px-lg flex flex-col items-start md:group-odd:items-end text-left md:group-odd:text-right w-full">
+                        <div
+                            class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 w-full md:w-5/6 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow">
+                            <span class="text-primary font-bold font-label-sm text-label-sm block mb-1">2019</span>
+                            <h3 class="font-title-md text-title-md text-on-background mb-2">Integration of Tech</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Introduced advanced biometric
+                                screening and digital progress tracking into standard patient care protocols.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:even:flex-row group mb-lg last:mb-0">
+                    <div
+                        class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 shadow-[0_0_0_4px_rgba(135,206,250,0.3)] z-10">
+                    </div>
+                    <div
+                        class="ml-12 md:ml-0 md:w-1/2 md:px-lg flex flex-col items-start md:group-odd:items-end text-left md:group-odd:text-right w-full">
+                        <div
+                            class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 w-full md:w-5/6 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow">
+                            <span class="text-primary font-bold font-label-sm text-label-sm block mb-1">2023 -
+                                Present</span>
+                            <h3 class="font-title-md text-title-md text-on-background mb-2">Robotic Care Era</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Pioneered the use of advanced
+                                robotic assistance devices in complex neuro-rehabilitation programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Leadership -->
+        <section class="mb-xl">
+            <div class="text-center mb-lg">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Medical Board &amp; Leadership
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">The experts guiding our clinical
+                    excellence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                <!-- Profile 1 -->
+                <div
+                    class="bg-surface rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 flex flex-col group">
+                    <div class="h-64 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A professional portrait of a female medical director in her late 40s. She is wearing a crisp white medical coat over a light blue blouse. She has a warm, reassuring smile. The background is a brightly lit, modern clinical office with soft out-of-focus medical equipment. High-end corporate healthcare aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx83-yBHYdNASgf882YzZIbtgOm1cB6iGVD333Oy06i8V6h0J-PuulPxocEfdCBBEbe1VBwbq3AaFZKTnl-Gv7s2IGlIYDw_kYFREZE6rXUqE5EvLE_NDgwIcAdO703T9nchPRFbKrKdUu1ZmR6LbcykZVXnGm9etp5UBNOd4Kjhk2YKWhT_aj05REmGor9a2HR_74Vcui0HJuiZpsd18MgN1g7CRh69VyJj315tXACXoeMD7SKfx_lg">
+                    </div>
+                    <div class="p-md text-center">
+                        <h3 class="font-title-md text-title-md text-on-background mb-1">Dr. Sarah Jenkins</h3>
+                        <p class="text-primary font-label-sm text-label-sm mb-3">Medical Director</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm">Over 20 years of experience
+                            in neurological rehabilitation and clinical administration.</p>
+                    </div>
+                </div>
+                <!-- Profile 2 -->
+                <div
+                    class="bg-surface rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 flex flex-col group">
+                    <div class="h-64 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A professional portrait of a male orthopedic specialist in his 50s. He is wearing dark blue scrubs and a stethoscope around his neck. He looks confident and professional. The background features a clean, well-lit modern physical therapy gym with soft blue lighting accents. High-end medical corporate aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQQrEEo2MWzSHhQES8Ycg98tJ4ZHTmVo1qjKMPYjPAaJB3rLXAemjLNhze0WqC4TFBSWq7U7PKNjsutuCbmdSaN277PjZGr6WIRPfdheKQN4ww2uqxQTsWF7ePzYNt8HLeC8i3AmnyhdOK5wSWZdd4nejgc6Ti_pKO-A4Gv79O8tm6TOP-IYg2A178GKjvvfEDTa0ap6kDIadz3y0n7aljyizi4L0nBZlzVdOLn9q3yph0emBqlRR7vw">
+                    </div>
+                    <div class="p-md text-center">
+                        <h3 class="font-title-md text-title-md text-on-background mb-1">Dr. Marcus Vance</h3>
+                        <p class="text-primary font-label-sm text-label-sm mb-3">Head of Orthopedics</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm">Renowned specialist in
+                            sports medicine and complex joint reconstruction recovery.</p>
+                    </div>
+                </div>
+                <!-- Profile 3 -->
+                <div
+                    class="bg-surface rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-secondary/5 flex flex-col group">
+                    <div class="h-64 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A professional portrait of a female lead physiotherapist in her 30s. She is wearing a professional light blue polo shirt with a subtle clinic logo. She is smiling naturally. The background shows a bright, modern therapy room with large windows letting in natural light. Minimalist and calm aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSp7-Ce4u4SCh8AhwlMOYeeJjMfvhsMkTz2yS5OGUeAEPoB6ISRnUqNPS11LST5fcQc-s5QaX9omJpB3orGE98DM4igD4_U5ugMp34ZdjV2-b7WxQSx8meDPG3DcVm1AcUwXftFkK_qBgpRewC_SZLCRp3jEZY1n-l5k8e75qBqO8gZ_auAnq5RYJTtSNdpTVrX3Ngj3ZiJjRSLAzWxrFwgPBDA6BT-NIzMfCWHqUinaC_Kl-xFeZ_xw">
+                    </div>
+                    <div class="p-md text-center">
+                        <h3 class="font-title-md text-title-md text-on-background mb-1">Elena Rostova, DPT</h3>
+                        <p class="text-primary font-label-sm text-label-sm mb-3">Chief Physiotherapist</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm">Leading our team of
+                            therapists with a focus on functional movement and manual therapy techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full mt-lg bg-surface-container-high dark:bg-surface-container-high">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-lg px-gutter py-xl max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-primary text-[28px]">medical_services</span>
+                    <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">PhysioPro</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                    Restoring mobility and improving lives through clinical excellence and compassionate care.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-title-md text-title-md text-on-background mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">About Us</a></li>
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">Services</a></li>
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">Patient Portal</a></li>
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-title-md text-title-md text-on-background mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">Privacy Policy</a></li>
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">Terms of Service</a></li>
+                    <li class=""><a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100"
+                            href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-title-md text-title-md text-on-background mb-4">Contact</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-2">123 Healing Way, Suite 100</p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-2">Wellness City, ST 12345</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">contact@physiopro.com</p>
+            </div>
+        </div>
+        <div class="border-t border-secondary/10 py-6 text-center">
+            <p class="font-body-md text-body-md text-on-surface-variant">© 2024 PhysioPro Clinical Excellence. All
+                rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
